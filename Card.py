@@ -5,36 +5,81 @@ CARD_VALUES = {'2':2, '3':3, '4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10':10,'J':11,
 
 
 class Card():
+    """Class representing a playing card
+    
+    Attributes:
+        suit(str): a string representing the suit of a card
+        value(str): a string representing the value of the card
+    """
     
     def __init__(self,suit,value):
+        """Initializes a card object"""
         self.suit= suit.strip()
         self.value = value
         
     def __str__(self):
+        """String representation of a card
+        
+        Returns:
+            string representation of a card
+        """
         return self.suit + self.value
         
     def get_value(self):
+        """Retrieve the number value corresponding to the value of the card
+        
+        Returns:
+            int representing number value of card
+        """
         return CARD_VALUES.get(self.value)
     
     def same_suit(self,other):
+        """Determines whether two cards are the same suit
+        
+        Args:
+            other(Card): the card being compared
+            
+        Returns:
+            boolean: true or false dependent on if the cards have the same suit"""
         if self.suit == other.suit:
             return True
         else: 
             return False
         
     def same_value(self,other):
+        """Determines whether two cards are the same value
+        
+        Args:
+            other(Card): the card being compared
+            
+        Returns:
+            boolean: true or false dependent on if the cards have the same value"""
         if self.get_value() == other.get_value():
             return True
         else: 
             return False
         
     def same_card(self,other):
-        if self.value == other.value and self.suit == other.suit:
+        """Determines whether two cards are the same card
+        
+        Args:
+            other(Card): the card being compared
+            
+        Returns:
+            boolean: true or false dependent on if the cards are the same"""
+        if self.get_value() == other.get_value() and self.suit == other.suit:
             return True
         else: 
             return False
         
     def possible_straight(self,other):
+        """Determines whether two cards can be part of the same straight
+        
+        Args:
+            other(Card): the card being compared
+            
+        Returns:
+            boolean: true or false dependent on if the cards can be part of the same straight"""
         if self.get_value() > other.get_value() and self.same_suit(other)==True:
             if self.get_value() % other.get_value() == 1:
                 return True
