@@ -17,7 +17,10 @@ class Book:
         book1 = [callnum, title, author]
         book2 = [callnum, title, author]
     
-def read_books(file): # use regular expressions to compare cutter numbers 
+    def __repr__(self): 
+      print(f"Book{self.callnum!r}, {self.title!r}, {self.author!r}")
+    
+def read_books(file): # use regular expressions
     with open(file, 'r', encoding='utf-8') as f: 
         for line in f: 
             line.strip()
