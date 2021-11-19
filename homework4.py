@@ -14,8 +14,8 @@ class Book:
         self.callnum = callnum
         self.title = title
         self.author = author 
-        book1 = (callnum, title, author)
-        book2 = (callnum, title, author)
+        book1 = [callnum, title, author]
+        book2 = [callnum, title, author]
     
 def read_books(file): # use regular expressions to compare cutter numbers 
     with open(file, 'r', encoding='utf-8') as f: 
