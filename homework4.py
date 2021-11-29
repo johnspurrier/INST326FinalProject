@@ -35,3 +35,14 @@ def read_books(file): # use regular expressions
         for line in f: 
             line.strip()
             
+def main(file): 
+    return 
+    
+def parse_args(list1):
+    return 
+
+if __name__ == "__main__":
+    main(file)
+    
+    
+            
