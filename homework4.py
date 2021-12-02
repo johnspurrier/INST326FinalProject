@@ -63,7 +63,7 @@ class Book:
         Returns:
             True or False 
         """
-        if self < other:
+        if self.less_than() < other.less_than():
             return True
         else: 
             return False
@@ -80,7 +80,7 @@ def read_books(file):
     list1 = []
     with open(file, 'r', encoding='utf-8') as f: 
         for line in f:
-            title, author, callnum = line.split("\t").strip("\n")
+            title, author, callnum = line.strip("\n").split("\t")
             list1.append(Book(callnum, title, author))
         return list1
             
