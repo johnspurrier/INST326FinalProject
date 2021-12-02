@@ -4,13 +4,13 @@ class Player:
     Arrtibutes: 
         name(str):
         order(int):
-        cards - array of cards
+        cards(array): array of cards
     """
     def __init__(self, name, order, cards): 
         self.name = name
         self.order = order
         self.cards = cards
-        self.card_count = 10
+        self.card_count = 7
         
         
     def turn(self, new_card):
@@ -26,7 +26,7 @@ class Player:
     # be dropped    
     def remove_card(self):
         self.cards.pop(0)
-            
+        self.card_count = 7
     # def turn(self, player, new_card, hand, order):
     #     if player.order == self.order: 
     #         self.card_count += 1
