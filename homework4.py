@@ -36,7 +36,7 @@ class Book:
     # Second section: (\d{1,4}(\.?)(\d{1,4})?)
     # Third section: (\s?\.?\w?\d+)\s
     # Fourth section: \d{1,4}
-        match = re.search(expr)
+        match = re.search(expr, self.callnum)
         if match == None:
             raise ValueError("Address cannot be parsed")
         else:
