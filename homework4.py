@@ -31,19 +31,25 @@ class Book:
         Returns:
             self.no1, self.no2, self.no3, self.no4
         """
-        expr = r"[A-Z]{1,3}\d{1,4}(\.?)(\d{1,4})?(\s?\.?\w?\d+)\s\d{1,4}"
+        expr1 = re.compile("[A-Z]{1,3}")
+        expr2 = re.compile("\d{1,4}(\.?)(\d{1,4})?")
+        expr3 = re.compile("(\s?\.?\w?\d+)\s")
+        expr4 = re.compile("\d{1,4}")
     # First section: ([A-Z]{1,3})
     # Second section: (\d{1,4}(\.?)(\d{1,4})?)
     # Third section: (\s?\.?\w?\d+)\s
     # Fourth section: \d{1,4}
-        match = re.search(expr, self.callnum)
-        if match == None:
-            raise ValueError("Address cannot be parsed")
-        else:
-            self.no1 = match.group(1)
-            self.no2 = match.group(2)
-            self.no3 = match.group(3)
-            self.no4 = match.group(4)
+        self.no1 = expr1.match(self.callnum)
+        self.no2 = expr2.match(self.callnum)
+        self.no3 = expr3.match(self.callnum)
+        self.no4 = expr4.match(self.callnum)
+        # if not match:
+        #     raise ValueError("Address cannot be parsed")
+        # else:
+        # self.no1 = match1.group(1)
+        # self.no2 = match2.group(1)
+        # self.no3 = match3.group(1)
+        # self.no4 = match4.group(1)
         return (self.no1, self.no2, self.no3, self.no4)
         
     def __repr__(self): 
@@ -52,7 +58,8 @@ class Book:
         Side effects: 
             prints out the formal representation
         """
-        print(f"Book{self.callnum!r}, {self.title!r}, {self.author!r}")
+        to_return = "Book(" + "\'" + self.callnum + "\', " + "\"" + self.title + "\", "  "\'" + self.author + "\')" 
+        return to_return
     
     def __lt__(self, other):
         """less than method compares the call numbers 
