@@ -241,7 +241,7 @@ class Player:
         # get card user wants to discard
         while True:
             try:
-                response = int(input('Selecta card to discard '))
+                response = int(input('Select a card to discard '))
                 if not len(str(response)) == 1:
                     print('Sorry, please enter a valid option.')
                     continue
