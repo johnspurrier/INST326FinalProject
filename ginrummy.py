@@ -9,7 +9,8 @@ def mk_card(s, index_of_card):
     """displays in the cards in the player's hands
     
     source:
-        the below class to display each card is based of the code found on
+        the below class to display each card in the players' hands is based of 
+        of the code found on
         https://codereview.stackexchange.com/questions/82103/ascii-fication-of-playing-cards """
     
     hand_display = [] 
