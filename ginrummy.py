@@ -185,9 +185,11 @@ class Hand:
 
     def check_hand(self):
         # check for runs
+        self.runs = list()
         self.get_runs()
 
         # check for sets
+        self.sets = list()
         self.get_sets()
 
         # check for gin
