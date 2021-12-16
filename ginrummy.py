@@ -9,7 +9,8 @@ def mk_card(s, index_of_card):
     """displays in the cards in the player's hands
     
     source:
-        the below class to display each card is based of the code found on
+        the below class to display each card in the players' hands is based of 
+        of the code found on
         https://codereview.stackexchange.com/questions/82103/ascii-fication-of-playing-cards """
     
     hand_display = [] 
@@ -102,7 +103,7 @@ class Hand:
 
     # check for runs
     def get_runs(self):
-        """sorts hand to determine runs"""
+        """sorts hand to determiene runs"""
         
         run_possible = True
         # sort the cards by value, value will not be the same as score.
@@ -185,9 +186,11 @@ class Hand:
 
     def check_hand(self):
         # check for runs
+        self.runs = list()
         self.get_runs()
 
         # check for sets
+        self.sets = list()
         self.get_sets()
 
         # check for gin
